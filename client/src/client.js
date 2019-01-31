@@ -22,7 +22,7 @@ const render = async (location) => {
         }
 
         ReactDOM.render(
-            <div>
+            <div className={s.wrapper}>
                 {route.component}
             </div>,
             container,

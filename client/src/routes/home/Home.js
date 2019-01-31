@@ -4,10 +4,11 @@ import { Formik } from 'formik';
 import s from './home.css';
 
 class Home extends Component {
-    getLatLng = async ({ location }) => {
+    getLatLng = async ({ location }, { resetForm }) => {
         const [results] = await geocodeByAddress(location);
         const { lat, lng } = await getLatLng(results);
         console.log(`${lat} ${lng}`);
+        resetForm({ location: '' });
     }
 
     render() {
@@ -30,17 +31,17 @@ class Home extends Component {
                                             placeholder: 'Enter a city',
                                         })}
                                     />
-                                    <div>
+                                    <div className={s.suggestions}>
                                         {suggestions.map(suggestion => (
                                             <div {...getSuggestionItemProps(suggestion)}>
-                                                <span>{suggestion.description}</span>
+                                                <span className={s.suggestion}>{suggestion.description}</span>
                                             </div>
                                         ))}
                                     </div>
                                 </>
                             )}
                         </PlacesAutocomplete>
-                        <button type="submit">Submit</button>
+                        <button type="submit" className={s.button}>Submit</button>
                     </form>
                 )}
             </Formik>
