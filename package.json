@@ -1,0 +1,19 @@
+{
+  "name": "technical-assignment-front-end-engineer-dennisdijkstra",
+  "version": "1.0.0",
+  "description": "Make an application that allows the user to view the observed (in the past 30 days) or forecasted (in the future) daily weather conditions for a given location using the [Dark Sky API](https://darksky.net/dev/docs).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/madewithlove/technical-assignment-front-end-engineer-dennisdijkstra.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/madewithlove/technical-assignment-front-end-engineer-dennisdijkstra/issues"
+  },
+  "homepage": "https://github.com/madewithlove/technical-assignment-front-end-engineer-dennisdijkstra#readme"
+}
