@@ -4,7 +4,10 @@
   "description": "Make an application that allows the user to view the observed (in the past 30 days) or forecasted (in the future) daily weather conditions for a given location using the [Dark Sky API](https://darksky.net/dev/docs).",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "webpack": "webpack-dev-server --mode development ./client/src/client.js --open",
+    "dev": "webpack --mode development ./client/src/client.js --output ./client/dist/bundle.js --open",
+    "build": "webpack --mode production ./client/src/client.js --output ./client/dist/bundle.js --open",
+    "start": "concurrently \"npm:dev\" \"npm:webpack\""
   },
   "repository": {
     "type": "git",
@@ -15,5 +18,11 @@
   "bugs": {
     "url": "https://github.com/madewithlove/technical-assignment-front-end-engineer-dennisdijkstra/issues"
   },
-  "homepage": "https://github.com/madewithlove/technical-assignment-front-end-engineer-dennisdijkstra#readme"
+  "homepage": "https://github.com/madewithlove/technical-assignment-front-end-engineer-dennisdijkstra#readme",
+  "dependencies": {
+    "concurrently": "^4.1.0",
+    "webpack": "^4.29.0",
+    "webpack-cli": "^3.2.1",
+    "webpack-dev-server": "^3.1.14"
+  }
 }
