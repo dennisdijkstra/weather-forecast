@@ -2,17 +2,30 @@ import '@babel/polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import history from './history';
+import router from './router';
+import queryString from 'query-string';
 
 const container = document.getElementById('root');
 
 const render = async (location) => {
     try {
+        const context = {
+            pathname: location.pathname,
+            query: queryString.parse(location.search),
+        };
+        const route = await router.resolve(context);
+
+        if (route.redirect) {
+            history.replace(route.redirect);
+            return;
+        }
+
         ReactDOM.render(
             <div>
-                <h1>Hello World</h1>
+                {route.component}
             </div>,
             container,
-            () => document.title = 'hello world',
+            () => document.title = route.title,
         );
     } catch (error) {
         console.error(error);
