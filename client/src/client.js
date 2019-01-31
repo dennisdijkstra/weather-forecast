@@ -1,9 +1,9 @@
 import '@babel/polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import queryString from 'query-string';
 import history from './history';
 import router from './router';
-import queryString from 'query-string';
 
 const container = document.getElementById('root');
 
