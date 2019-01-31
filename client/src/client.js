@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import queryString from 'query-string';
 import history from './history';
 import router from './router';
+import s from './client.css';
 
 const container = document.getElementById('root');
 
