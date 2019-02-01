@@ -6,9 +6,22 @@ import s from './home.css';
 class Home extends Component {
     getLatLng = async ({ location }, { resetForm }) => {
         const [results] = await geocodeByAddress(location);
-        const { lat, lng } = await getLatLng(results);
-        console.log(`${lat} ${lng}`);
+        const data = await getLatLng(results);
+
         resetForm({ location: '' });
+        this.getWeather(data);
+    }
+
+    getWeather = async (data) => {
+        const response = await fetch('/api/weather/weather', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        });
+        const json = await response.json();
+        console.log(json);
     }
 
     render() {
