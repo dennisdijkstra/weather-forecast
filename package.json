@@ -4,10 +4,12 @@
   "description": "Make an application that allows the user to view the observed (in the past 30 days) or forecasted (in the future) daily weather conditions for a given location using the [Dark Sky API](https://darksky.net/dev/docs).",
   "main": "index.js",
   "scripts": {
+    "server": "nodemon server.js",
     "webpack": "webpack-dev-server --mode development ./client/src/client.js --open",
     "dev": "webpack --mode development ./client/src/client.js --output ./client/dist/bundle.js --open",
+    "client": "concurrently \"npm:dev\" \"npm:webpack\"",
     "build": "webpack --mode production ./client/src/client.js --output ./client/dist/bundle.js --open",
-    "start": "concurrently \"npm:dev\" \"npm:webpack\""
+    "start": "concurrently \"npm:server\" \"npm:client\""
   },
   "repository": {
     "type": "git",
