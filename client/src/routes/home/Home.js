@@ -30,7 +30,13 @@ class Home extends Component {
                 initialValues={{ location: '' }}
                 onSubmit={this.getLatLng}
             >
-                {({ values, handleSubmit, setFieldValue }) => (
+                {({
+                    values,
+                    dirty,
+                    handleSubmit,
+                    isSubmitting,
+                    setFieldValue
+                }) => (
                     <form onSubmit={handleSubmit}>
                         <PlacesAutocomplete
                             value={values.location}
@@ -54,7 +60,7 @@ class Home extends Component {
                                 </>
                             )}
                         </PlacesAutocomplete>
-                        <button type="submit" className={s.button}>Submit</button>
+                        <button type="submit" disabled={!dirty || isSubmitting} className={s.button}>Get Weather</button>
                     </form>
                 )}
             </Formik>

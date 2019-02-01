@@ -33,6 +33,7 @@
     "express": "^4.16.4",
     "formik": "^1.4.3",
     "history": "^4.7.2",
+    "moment": "^2.24.0",
     "node-fetch": "^2.3.0",
     "nodemon": "^1.18.9",
     "postcss-css-reset": "^1.0.2",
