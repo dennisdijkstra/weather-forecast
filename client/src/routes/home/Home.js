@@ -28,7 +28,7 @@ class Home extends Component {
                                 <>
                                     <input
                                         {...getInputProps({
-                                            placeholder: 'Enter a city',
+                                            placeholder: 'Enter a location',
                                         })}
                                     />
                                     <div className={s.suggestions}>
