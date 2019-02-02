@@ -5,6 +5,7 @@ import DatePicker from 'react-datepicker';
 import moment from 'moment';
 import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 import { Formik } from 'formik';
+import validationSchema from '../../validation/ValidationSchema';
 import SideBar from '../../components/sidebar';
 import Content from '../../components/content';
 import Button from '../../components/button';
@@ -15,26 +16,35 @@ class Home extends Component {
         weather: null,
     }
 
-    getLatLng = async ({ location, date }, { setSubmitting }) => {
-        const formattedDate = moment(date).format();
-        const [results] = await geocodeByAddress(location);
-        const { lat, lng } = await getLatLng(results);
-        const data = { lat, lng, formattedDate };
+    getLatLng = async ({ location, date }, { setErrors, setSubmitting }) => {
+        try {
+            const formattedDate = moment(date).format();
+            const [results] = await geocodeByAddress(location);
+            const { lat, lng } = await getLatLng(results);
+            const data = { lat, lng, formattedDate };
 
-        setSubmitting(false);
-        this.getWeather(data);
+            setSubmitting(false);
+            this.getWeather(data);
+        } catch (err) {
+            setSubmitting(false);
+            setErrors({ location: 'Please provide a valid location' });
+        }
     }
 
     getWeather = async (data) => {
-        const response = await fetch('/api/weather/weather', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data),
-        });
-        const weather = await response.json();
-        this.setState({ weather });
+        try {
+            const response = await fetch('/api/weather/weather', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            });
+            const weather = await response.json();
+            this.setState({ weather });
+        } catch (err) {
+            console.log(err);
+        }
     }
 
     render() {
@@ -53,6 +63,7 @@ class Home extends Component {
                     <Formik
                         initialValues={{ location: '', date: moment().toDate() }}
                         onSubmit={this.getLatLng}
+                        validationSchema={validationSchema}
                     >
                         {({
                             values,
@@ -60,6 +71,7 @@ class Home extends Component {
                             handleSubmit,
                             isSubmitting,
                             setFieldValue,
+                            errors,
                         }) => (
                             <form onSubmit={handleSubmit}>
                                 <PlacesAutocomplete
@@ -69,11 +81,15 @@ class Home extends Component {
                                 >
                                     {({ getInputProps, getSuggestionItemProps, suggestions }) => (
                                         <>
-                                            <input
-                                                {...getInputProps({
-                                                    placeholder: 'Enter a location',
-                                                })}
-                                            />
+                                            <label htmlFor="location">Location:
+                                                <input
+                                                    id="location"
+                                                    {...getInputProps({
+                                                        placeholder: 'Enter a location',
+                                                    })}
+                                                />
+                                                <div className={s['form-field-error']}>{errors.location}</div>
+                                            </label>
                                             <div className={s.suggestions}>
                                                 {suggestions.map(suggestion => (
                                                     <div {...getSuggestionItemProps(suggestion)}>
@@ -83,12 +99,15 @@ class Home extends Component {
                                                     </div>
                                                 ))}
                                             </div>
+                                            <label htmlFor="date">Date:</label>
                                             <DatePicker
+                                                id="date"
                                                 selected={values.date}
                                                 onChange={value => setFieldValue('date', value)}
                                                 minDate={moment().subtract(30, 'days').toDate()}
                                                 maxDate={moment().add(30, 'days').toDate()}
                                             />
+                                            <div className={s['form-field-error']}>{errors.date}</div>
                                         </>
                                     )}
                                 </PlacesAutocomplete>

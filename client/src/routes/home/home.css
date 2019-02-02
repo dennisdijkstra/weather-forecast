@@ -3,13 +3,22 @@ form {
 }
 
 input {
+    position: relative;
     display: block;
-    padding: 6px 0;
-    margin-bottom: 24px;
+    padding: 10px 0;
+    margin-bottom: 4px;
+    font-size: 16px;
     font-weight: 600;
     background: none;
     border: none;
     border-bottom: 2px solid #7afae1;
+}
+
+label {
+    position: relative;
+    display: block;
+    margin-top: 28px;
+    font-size: 14px;
 }
 
 .suggestions {
@@ -29,4 +38,9 @@ input {
 
 .date {
     display: block;
+}
+
+.form-field-error {
+    position: absolute;
+    font-size: 10px;
 }

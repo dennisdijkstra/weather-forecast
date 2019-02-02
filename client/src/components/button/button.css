@@ -8,6 +8,12 @@
     background-color: var(--aquamarine);
     border: none;
     border-radius: 5px;
+    transition: .5s filter;
+
+    &:hover {
+        filter: brightness(90%);
+        transition: .5s filter;
+    }
 
     &:focus {
         outline: 0;
