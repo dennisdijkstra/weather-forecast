@@ -5,9 +5,9 @@ import DatePicker from 'react-datepicker';
 import moment from 'moment';
 import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 import { Formik } from 'formik';
-import SideBar from '../../components/sidebar/SideBar';
-import Content from '../../components/content/Content';
-import Button from '../../components/button/Button';
+import SideBar from '../../components/sidebar';
+import Content from '../../components/content';
+import Button from '../../components/button';
 import s from './home.css';
 
 class Home extends Component {
