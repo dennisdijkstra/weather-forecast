@@ -1,8 +1,11 @@
 @reset-global pc;
 
+body {
+    color: #404040;
+}
+
 .wrapper {
     height: 100vh;
-    color: #404040;
 }
 
 h1 {

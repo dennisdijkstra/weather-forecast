@@ -7,6 +7,7 @@ import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 import { Formik } from 'formik';
 import SideBar from '../../components/sidebar/SideBar';
 import Content from '../../components/content/Content';
+import Button from '../../components/button/Button';
 import s from './home.css';
 
 class Home extends Component {
@@ -44,7 +45,7 @@ class Home extends Component {
             <Grid
                 columns="300px 1fr"
                 areas={['sidebar content']}
-                height="100%"
+                height="100vh"
                 gap="0"
             >
                 <SideBar>
@@ -91,7 +92,7 @@ class Home extends Component {
                                         </>
                                     )}
                                 </PlacesAutocomplete>
-                                <button type="submit" disabled={!dirty || isSubmitting} className={s.button}>Show Weather</button>
+                                <Button disabled={!dirty || isSubmitting}>Show Weather</Button>
                             </form>
                         )}
                     </Formik>

@@ -1,0 +1,18 @@
+.button {
+    display: block;
+    padding: 10px 12px;
+    font-size: 14px;
+    color: #fff;
+    cursor: pointer;
+    background: linear-gradient(to right, #fff700 0%, #00dbde 100%);
+    border: none;
+    border-radius: 5px;
+
+    &:focus {
+        outline: 0;
+    }
+
+    &:disabled {
+        filter: opacity(25%);
+    }
+}
