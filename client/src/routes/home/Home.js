@@ -99,9 +99,9 @@ class Home extends Component {
                 </SideBar>
                 <Content>
                     {weather ? (
-                        <p>Temperature: {temperature} &#8451;</p>
+                        <h2>Temperature: {temperature} &#8451;</h2>
                     ) : (
-                        <p>No weather results yet ..</p>
+                        <h2>No weather results yet ..</h2>
                     )}
                 </Content>
             </Grid>

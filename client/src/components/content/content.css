@@ -1,5 +1,9 @@
 .content {
-    box-sizing: border-box;;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 24px;
-    background: linear-gradient(to right, #fff700 0%, #00dbde 100%);
+    color: var(--medium-purple);
+    background-color: var(--aquamarine);
 }

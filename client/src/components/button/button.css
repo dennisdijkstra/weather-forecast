@@ -2,9 +2,10 @@
     display: block;
     padding: 10px 12px;
     font-size: 14px;
-    color: #fff;
+    font-weight: 600;
+    color: var(--burnt-sienna);
     cursor: pointer;
-    background: linear-gradient(to right, #fff700 0%, #00dbde 100%);
+    background-color: var(--aquamarine);
     border: none;
     border-radius: 5px;
 
