@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Cell } from 'styled-css-grid';
-import s from './sidebar.css';
+import s from './content.css';
 
-class SideBar extends Component {
+class Content extends Component {
     static propTypes = {
         children: PropTypes.node.isRequired,
     };
@@ -12,11 +12,11 @@ class SideBar extends Component {
         const { children } = this.props;
 
         return (
-            <Cell area="sidebar" className={s.sidebar}>
+            <Cell area="content" className={s.content}>
                 { children }
             </Cell>
         );
     }
 }
 
-export default SideBar;
+export default Content;
