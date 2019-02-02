@@ -13,13 +13,13 @@ class SideBar extends Component {
         setWeather: PropTypes.func.isRequired,
     };
 
-    getLatLng = async ({ location, date }, { resetForm }) => {
+    getLatLng = async ({ location, date }, { setSubmitting }) => {
         const formattedDate = moment(date).format();
         const [results] = await geocodeByAddress(location);
         const { lat, lng } = await getLatLng(results);
         const data = { lat, lng, formattedDate };
 
-        resetForm({ location: '', date: moment().toDate() });
+        setSubmitting(false);
         this.getWeather(data);
     }
 
@@ -81,7 +81,7 @@ class SideBar extends Component {
                                         </>
                                     )}
                                 </PlacesAutocomplete>
-                                <button type="submit" disabled={!dirty || isSubmitting} className={s.button}>Get Weather</button>
+                                <button type="submit" disabled={!dirty || isSubmitting} className={s.button}>Show Weather</button>
                             </form>
                         )}
                     </Formik>
