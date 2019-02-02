@@ -1,16 +1,16 @@
+.sidebar {
+    padding: 24px;
+    background-color: #e0ffff;
+}
+
 form {
     position: relative;
 }
 
 input {
     display: block;
-    min-width: 260px;
     padding: 6px;
     margin-bottom: 24px;
-}
-
-h1 {
-    max-width: 420px;
 }
 
 .button {
@@ -24,7 +24,6 @@ h1 {
     left: 0;
     z-index: 2;
     min-width: 350px;
-    padding: 12px 6px;
     background-color: #fff;
 }
 
