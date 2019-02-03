@@ -135,7 +135,11 @@ class Home extends Component {
                 <Content>
                     {weather ? (
                         <>
-                            <h1>{summary}</h1>
+                            <h1>
+                                <div>&mdash;</div>
+                                {summary}
+                                <div>&mdash;</div>
+                            </h1>
                             <ul>
                                 <li><span className={s.bold}>Max temp:</span> {temperatureHigh} &#8451;</li>
                                 <li><span className={s.bold}>Min temp:</span> {temperatureLow} &#8451;</li>
@@ -144,7 +148,11 @@ class Home extends Component {
                             </ul>
                         </>
                     ) : (
-                        <h1>There are no weather results yet ..</h1>
+                        <h1>
+                            <div>&mdash;</div>
+                            There are no weather results yet.
+                            <div>&mdash;</div>
+                        </h1>
                     )}
                 </Content>
             </Grid>

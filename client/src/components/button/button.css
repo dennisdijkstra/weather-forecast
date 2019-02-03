@@ -21,6 +21,7 @@
     }
 
     &:disabled {
+        cursor: default;
         filter: opacity(25%);
     }
 }
