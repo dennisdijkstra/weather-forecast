@@ -1,6 +1,7 @@
 .button {
     display: block;
     padding: 10px 12px;
+    margin-top: 36px;
     font-size: 14px;
     font-weight: 600;
     color: var(--burnt-sienna);

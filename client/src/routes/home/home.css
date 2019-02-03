@@ -17,27 +17,33 @@ input {
 label {
     position: relative;
     display: block;
-    margin-top: 28px;
+    margin-bottom: 24px;
     font-size: 14px;
 }
 
 .suggestions {
     position: absolute;
-    top: 34px;
+    top: 72px;
     left: 0;
     z-index: 2;
-    min-width: 350px;
+    min-width: 300px;
     background-color: #fff;
+    border-radius: 5px;
 }
 
 .suggestion {
     display: block;
-    margin-bottom: 12px;
+    margin: 12px;
+    color: var(--burnt-sienna);
     cursor: pointer;
 }
 
 .date {
     display: block;
+}
+
+.calender {
+    background-color: var(--aquamarine);
 }
 
 .form-field-error {

@@ -41,6 +41,7 @@ class Home extends Component {
                 body: JSON.stringify(data),
             });
             const weather = await response.json();
+
             this.setState({ weather });
         } catch (err) {
             console.log(err);
@@ -81,7 +82,8 @@ class Home extends Component {
                                 >
                                     {({ getInputProps, getSuggestionItemProps, suggestions }) => (
                                         <>
-                                            <label htmlFor="location">Location:
+                                            <label htmlFor="location">
+                                                Location:
                                                 <input
                                                     id="location"
                                                     {...getInputProps({
@@ -99,15 +101,18 @@ class Home extends Component {
                                                     </div>
                                                 ))}
                                             </div>
-                                            <label htmlFor="date">Date:</label>
-                                            <DatePicker
-                                                id="date"
-                                                selected={values.date}
-                                                onChange={value => setFieldValue('date', value)}
-                                                minDate={moment().subtract(30, 'days').toDate()}
-                                                maxDate={moment().add(30, 'days').toDate()}
-                                            />
-                                            <div className={s['form-field-error']}>{errors.date}</div>
+                                            <label htmlFor="date">
+                                                <span style={{ display: 'block' }}>Date:</span>
+                                                <DatePicker
+                                                    id="date"
+                                                    calendarClassName={s.calender}
+                                                    selected={values.date}
+                                                    onChange={value => setFieldValue('date', value)}
+                                                    minDate={moment().subtract(30, 'days').toDate()}
+                                                    maxDate={moment().add(30, 'days').toDate()}
+                                                />
+                                                <div className={s['form-field-error']}>{errors.date}</div>
+                                            </label>
                                         </>
                                     )}
                                 </PlacesAutocomplete>

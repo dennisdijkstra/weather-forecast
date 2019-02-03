@@ -34,6 +34,7 @@ module.exports = {
         "no-unused-expressions": 0,
         "no-underscore-dangle": 0,
         "object-curly-newline": 0,
+        "jsx-a11y/label-has-for": 0,
         "indent": [
             "error", 4
         ],
@@ -41,7 +42,6 @@ module.exports = {
             "error", 4
         ],
         "jsx-a11y/label-has-associated-control": [ 2, {
-            "labelComponents": ["label"],
             "labelAttributes": ["htmlFor"],
             "controlComponents": ["input"]
         }],

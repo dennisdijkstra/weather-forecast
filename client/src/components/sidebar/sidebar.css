@@ -3,8 +3,4 @@
     padding: 24px;
     color: var(--aquamarine);
     background-color: var(--burnt-sienna);
-
-    button {
-        margin-top: 28px;
-    }
 }
