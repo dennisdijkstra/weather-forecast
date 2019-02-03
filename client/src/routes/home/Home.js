@@ -116,7 +116,7 @@ class Home extends Component {
                                                 <span style={{ display: 'block' }}>Date:</span>
                                                 <DatePicker
                                                     id="date"
-                                                    calendarClassName={s.calender}
+                                                    calendarClassName={s.calendar}
                                                     selected={values.date}
                                                     onChange={value => setFieldValue('date', value)}
                                                     minDate={moment().subtract(30, 'days').toDate()}
