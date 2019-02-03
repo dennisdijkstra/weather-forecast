@@ -48,9 +48,19 @@ class Home extends Component {
         }
     }
 
+    handleDateChangeRaw = (e) => {
+        e.preventDefault();
+    }
+
     render() {
         const { weather } = this.state;
-        const temperature = weather?.currently?.temperature;
+        const { data: [{
+            humidity,
+            summary,
+            temperatureLow,
+            temperatureHigh,
+            windSpeed,
+        }] } = weather?.daily || { data: [{}] };
 
         return (
             <Grid
@@ -60,7 +70,7 @@ class Home extends Component {
                 gap="0"
             >
                 <SideBar>
-                    <h1>Get observed or forecasted weather conditions</h1>
+                    <h2>Get observed or forecasted weather conditions</h2>
                     <Formik
                         initialValues={{ location: '', date: moment().toDate() }}
                         onSubmit={this.getLatLng}
@@ -110,6 +120,7 @@ class Home extends Component {
                                                     onChange={value => setFieldValue('date', value)}
                                                     minDate={moment().subtract(30, 'days').toDate()}
                                                     maxDate={moment().add(30, 'days').toDate()}
+                                                    onChangeRaw={this.handleDateChangeRaw}
                                                 />
                                                 <div className={s['form-field-error']}>{errors.date}</div>
                                             </label>
@@ -123,9 +134,17 @@ class Home extends Component {
                 </SideBar>
                 <Content>
                     {weather ? (
-                        <h2>Temperature: {temperature} &#8451;</h2>
+                        <>
+                            <h1>{summary}</h1>
+                            <ul>
+                                <li><span className={s.bold}>Max temp:</span> {temperatureHigh} &#8451;</li>
+                                <li><span className={s.bold}>Min temp:</span> {temperatureLow} &#8451;</li>
+                                <li><span className={s.bold}>Humidity:</span> {(humidity * 100).toFixed(0)}%</li>
+                                <li><span className={s.bold}>Windspeed:</span> {windSpeed} km/h</li>
+                            </ul>
+                        </>
                     ) : (
-                        <h2>No weather results yet ..</h2>
+                        <h1>There are no weather results yet ..</h1>
                     )}
                 </Content>
             </Grid>
