@@ -5,6 +5,7 @@ form {
 input {
     position: relative;
     display: block;
+    width: 185px;
     padding: 10px 0;
     margin-bottom: 4px;
     font-size: 16px;
@@ -53,4 +54,32 @@ label {
 
 .bold {
     font-weight: 600;
+}
+
+@media screen and (max-width: 800px) {
+    .grid {
+        grid-template-areas: "sidebar" "content";
+        grid-template-rows: 160px 1fr;
+        grid-template-columns: 1fr;
+    }
+
+    label {
+        display: inline-block;
+        margin: 0 12px 0 0;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .grid {
+        grid-template-rows: 210px 1fr;
+    }
+
+    input {
+        margin-bottom: 0;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 16px
+    }
 }

@@ -37,3 +37,26 @@ li {
     font-size: 30px;
     line-height: 40px;
 }
+
+@media screen and (max-width: 800px) {
+    h1 {
+        font-size: 36px;
+        line-height: 36px;
+    }
+    
+    h2 {
+        margin-bottom: 12px;
+        font-size: 22px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    h2 {
+        display: none;
+    }
+
+    li {
+        font-size: 20px;
+        line-height: 28px;
+    }
+}

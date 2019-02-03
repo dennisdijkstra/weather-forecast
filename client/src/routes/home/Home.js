@@ -68,9 +68,10 @@ class Home extends Component {
                 areas={['sidebar content']}
                 height="100vh"
                 gap="0"
+                className={s.grid}
             >
                 <SideBar>
-                    <h2>Get observed or forecasted weather conditions</h2>
+                    <h2>Get observed or forecasted weather conditions.</h2>
                     <Formik
                         initialValues={{ location: '', date: moment().toDate() }}
                         onSubmit={this.getLatLng}

@@ -4,3 +4,9 @@
     color: var(--aquamarine);
     background-color: var(--burnt-sienna);
 }
+
+@media screen and (max-width: 550px) {
+    .sidebar {
+        padding: 12px;
+    }
+}

@@ -25,3 +25,18 @@
         filter: opacity(25%);
     }
 }
+
+@media screen and (max-width: 800px) {
+    .button {
+        display: inline-block;
+        padding: 10px 6px;
+        margin-top: 0;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .button {
+        display: block;
+        margin-top: 0;
+    }
+}
