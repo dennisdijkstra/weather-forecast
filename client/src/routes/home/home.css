@@ -5,9 +5,8 @@ form {
 input {
     position: relative;
     display: block;
-    width: 185px;
+    width: 252px;
     padding: 10px 0;
-    margin-bottom: 4px;
     font-size: 16px;
     font-weight: 600;
     background: none;
@@ -18,7 +17,6 @@ input {
 label {
     position: relative;
     display: block;
-    margin-bottom: 24px;
     font-size: 14px;
 }
 
@@ -47,8 +45,14 @@ label {
     background-color: var(--aquamarine);
 }
 
+.form-field {
+    position: relative;
+    margin-bottom: 24px;
+}
+
 .form-field-error {
     position: absolute;
+    bottom: -14px;
     font-size: 10px;
 }
 
@@ -63,23 +67,28 @@ label {
         grid-template-columns: 1fr;
     }
 
-    label {
+    .form-field {
         display: inline-block;
         margin: 0 12px 0 0;
+    }
+
+    input {
+        width: 185px;
     }
 }
 
 @media screen and (max-width: 550px) {
     .grid {
-        grid-template-rows: 210px 1fr;
+        grid-template-rows: 214px 1fr;
     }
 
     input {
+        width: 252px;
         margin-bottom: 0;
     }
 
-    label {
+    .form-field {
         display: block;
-        margin-bottom: 16px
+        margin: 0 0 18px 0;
     }
 }

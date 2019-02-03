@@ -21,9 +21,9 @@ h2 {
 
 h1 {
     max-width: 400px;
-    margin-bottom: 52px;
-    font-size: 52px;
-    line-height: 52px;
+    margin-bottom: 48px;
+    font-size: 48px;
+    line-height: 48px;
     text-align: center;
 }
 
@@ -43,7 +43,7 @@ li {
         font-size: 36px;
         line-height: 36px;
     }
-    
+
     h2 {
         margin-bottom: 12px;
         font-size: 22px;

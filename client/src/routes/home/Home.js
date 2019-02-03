@@ -93,8 +93,8 @@ class Home extends Component {
                                 >
                                     {({ getInputProps, getSuggestionItemProps, suggestions }) => (
                                         <>
-                                            <label htmlFor="location">
-                                                Location:
+                                            <div className={s['form-field']}>
+                                                <label htmlFor="location">Location:</label>
                                                 <input
                                                     id="location"
                                                     {...getInputProps({
@@ -102,18 +102,18 @@ class Home extends Component {
                                                     })}
                                                 />
                                                 <div className={s['form-field-error']}>{errors.location}</div>
-                                            </label>
-                                            <div className={s.suggestions}>
-                                                {suggestions.map(suggestion => (
-                                                    <div {...getSuggestionItemProps(suggestion)}>
-                                                        <span className={s.suggestion}>
-                                                            {suggestion.description}
-                                                        </span>
-                                                    </div>
-                                                ))}
+                                                <div className={s.suggestions}>
+                                                    {suggestions.map(suggestion => (
+                                                        <div {...getSuggestionItemProps(suggestion)}>
+                                                            <span className={s.suggestion}>
+                                                                {suggestion.description}
+                                                            </span>
+                                                        </div>
+                                                    ))}
+                                                </div>
                                             </div>
-                                            <label htmlFor="date">
-                                                <span style={{ display: 'block' }}>Date:</span>
+                                            <div className={s['form-field']}>
+                                                <label htmlFor="date"><span style={{ display: 'block' }}>Date:</span></label>
                                                 <DatePicker
                                                     id="date"
                                                     calendarClassName={s.calendar}
@@ -124,7 +124,7 @@ class Home extends Component {
                                                     onChangeRaw={this.handleDateChangeRaw}
                                                 />
                                                 <div className={s['form-field-error']}>{errors.date}</div>
-                                            </label>
+                                            </div>
                                         </>
                                     )}
                                 </PlacesAutocomplete>

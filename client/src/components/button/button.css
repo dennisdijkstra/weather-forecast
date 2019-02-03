@@ -5,6 +5,7 @@
     font-size: 14px;
     font-weight: 600;
     color: var(--burnt-sienna);
+    vertical-align: bottom;
     cursor: pointer;
     background-color: var(--aquamarine);
     border: none;
@@ -37,6 +38,5 @@
 @media screen and (max-width: 550px) {
     .button {
         display: block;
-        margin-top: 0;
     }
 }
