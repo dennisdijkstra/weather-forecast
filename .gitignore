@@ -5,7 +5,6 @@
 /client/dist
 
 # misc
-/config/keys.js
 .DS_Store
 .env.local
 .env.development.local

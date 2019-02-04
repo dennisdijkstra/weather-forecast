@@ -20,17 +20,17 @@ h2 {
 }
 
 h1 {
+    margin-bottom: 36px;
+    font-size: 28px;
+    line-height: 30px;
+}
+
+h2 {
     max-width: 400px;
     margin-bottom: 48px;
     font-size: 48px;
     line-height: 48px;
     text-align: center;
-}
-
-h2 {
-    margin-bottom: 36px;
-    font-size: 28px;
-    line-height: 30px;
 }
 
 li {
@@ -40,18 +40,18 @@ li {
 
 @media screen and (max-width: 800px) {
     h1 {
-        font-size: 36px;
-        line-height: 36px;
+        margin-bottom: 12px;
+        font-size: 22px;
     }
 
     h2 {
-        margin-bottom: 12px;
-        font-size: 22px;
+        font-size: 36px;
+        line-height: 36px;
     }
 }
 
 @media screen and (max-width: 550px) {
-    h2 {
+    h1 {
         display: none;
     }
 

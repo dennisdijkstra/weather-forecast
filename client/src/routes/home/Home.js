@@ -71,7 +71,7 @@ class Home extends Component {
                 className={s.grid}
             >
                 <SideBar>
-                    <h2>Get observed or forecasted weather conditions.</h2>
+                    <h1>Get observed or forecasted weather conditions.</h1>
                     <Formik
                         initialValues={{ location: '', date: moment().toDate() }}
                         onSubmit={this.getLatLng}
@@ -134,27 +134,29 @@ class Home extends Component {
                     </Formik>
                 </SideBar>
                 <Content>
-                    {weather ? (
-                        <>
-                            <h1>
+                    <main>
+                        {weather ? (
+                            <>
+                                <h2>
+                                    <div>&mdash;</div>
+                                    {summary}
+                                    <div>&mdash;</div>
+                                </h2>
+                                <ul>
+                                    <li><span className={s.bold}>Max temp:</span> {temperatureHigh} &#8451;</li>
+                                    <li><span className={s.bold}>Min temp:</span> {temperatureLow} &#8451;</li>
+                                    <li><span className={s.bold}>Humidity:</span> {(humidity * 100).toFixed(0)}%</li>
+                                    <li><span className={s.bold}>Windspeed:</span> {windSpeed} km/h</li>
+                                </ul>
+                            </>
+                        ) : (
+                            <h2>
                                 <div>&mdash;</div>
-                                {summary}
+                                There are no weather results yet.
                                 <div>&mdash;</div>
-                            </h1>
-                            <ul>
-                                <li><span className={s.bold}>Max temp:</span> {temperatureHigh} &#8451;</li>
-                                <li><span className={s.bold}>Min temp:</span> {temperatureLow} &#8451;</li>
-                                <li><span className={s.bold}>Humidity:</span> {(humidity * 100).toFixed(0)}%</li>
-                                <li><span className={s.bold}>Windspeed:</span> {windSpeed} km/h</li>
-                            </ul>
-                        </>
-                    ) : (
-                        <h1>
-                            <div>&mdash;</div>
-                            There are no weather results yet.
-                            <div>&mdash;</div>
-                        </h1>
-                    )}
+                            </h2>
+                        )}
+                    </main>
                 </Content>
             </Grid>
         );
