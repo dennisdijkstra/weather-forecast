@@ -1,7 +1,7 @@
 {
-  "name": "technical-assignment-front-end-engineer-dennisdijkstra",
+  "name": "weather-forecast",
   "version": "1.0.0",
-  "description": "Make an application that allows the user to view the observed (in the past 30 days) or forecasted (in the future) daily weather conditions for a given location using the [Dark Sky API](https://darksky.net/dev/docs).",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "server": "nodemon server.js",
@@ -13,15 +13,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/madewithlove/technical-assignment-front-end-engineer-dennisdijkstra.git"
+    "url": ""
   },
   "author": "",
   "license": "ISC",
   "proxy": "http://localhost:5000",
-  "bugs": {
-    "url": "https://github.com/madewithlove/technical-assignment-front-end-engineer-dennisdijkstra/issues"
-  },
-  "homepage": "https://github.com/madewithlove/technical-assignment-front-end-engineer-dennisdijkstra#readme",
   "dependencies": {
     "@babel/plugin-proposal-class-properties": "^7.3.0",
     "@babel/plugin-proposal-optional-chaining": "^7.2.0",
