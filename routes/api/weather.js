@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.post('/weather', async ({ body: { lat, lng, formattedDate } }, res) => {
     try {
-        const response = await fetch(`https://api.darksky.net/forecast/${secretKey}/${lat},${lng},${formattedDate}?units=ca`);
+        const response = await fetch(`https://api.darksky.net/forecast/${process.env.SECRET_KEY}/${lat},${lng},${formattedDate}?units=ca`);
         const data = await response.json();
 
         res.send(data);

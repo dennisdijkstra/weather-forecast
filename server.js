@@ -1,10 +1,13 @@
 const express = require('express');
+const dotenv = require('dotenv');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-
 const weather = require('./routes/api/weather');
 
 const app = express();
+
+// Load env variables
+dotenv.config({ path: './config/config.env' });
 
 // Bodyparser Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
